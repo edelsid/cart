@@ -52,8 +52,7 @@ test ('normal sum', () => {
         'United States',
         'TestPhrase-1',
         'Action',
-        '120 мин. / 2:00',
-        10);
+        '120 мин. / 2:00');
     const movie2 = new Movie (
         253,
         'TestName-2',
@@ -62,8 +61,7 @@ test ('normal sum', () => {
         'France',
         'TestPhrase-2',
         'Comedy',
-        '108 мин. / 1:48',
-        10);
+        '108 мин. / 1:48');
     const cart = new Cart;
     cart.add(movie1);
     cart.add(movie2);
@@ -80,8 +78,7 @@ test ('discount sum', () => {
         'United States',
         'TestPhrase-1',
         'Action',
-        '120 мин. / 2:00',
-        10);
+        '120 мин. / 2:00');
     const movie2 = new Movie (
         253,
         'TestName-2',
@@ -90,12 +87,11 @@ test ('discount sum', () => {
         'France',
         'TestPhrase-2',
         'Comedy',
-        '108 мин. / 1:48',
-        10);
+        '108 мин. / 1:48');
     const cart = new Cart;
     cart.add(movie1);
     cart.add(movie2);
-    const result = cart.countDiscSum();
+    const result = cart.countDiscSum(10);
     expect(result).toBe(450);
 });
 

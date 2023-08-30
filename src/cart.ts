@@ -12,19 +12,17 @@ export default class Cart {
     }
 
     countSum(): number {
-        let sum = 0;
+        let prices = [];
         for (var item of this._items) {
-            sum = sum + item.price;
+            prices.push(item.price);
         }
+        const sum = prices.reduce((total, item) => total + item);
         return sum;
     }
 
-    countDiscSum(): number {
-        let sum = 0;
-        for (var item of this._items) {
-            sum = sum + (item.price - (item.price * (item.discount / 100)));
-        }
-        return sum;
+    countDiscSum(discount: number): number {
+        const discSum = this.countSum() - (this.countSum() * (discount / 100));
+        return discSum;
     }
 
     del(id: number): void {
